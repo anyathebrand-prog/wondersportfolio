@@ -87,6 +87,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .nav.is-scrolled { background: linear-gradient(rgba(11, 9, 16, .8), transparent); }
 .nav__logo { pointer-events: auto; font: 800 1.5rem/1 var(--body); letter-spacing: -.03em; text-decoration: none; color: #fff; }
 .nav__logo span { font-size: .6em; vertical-align: super; color: var(--violet); }
+.nav__logo img { display: block; height: 56px; width: auto; }
 
 /* ---------- DOCK (primary navigation) ---------- */
 .dock {
