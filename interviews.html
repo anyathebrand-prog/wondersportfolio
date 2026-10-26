@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interviews — Wonder</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <meta name="description" content="Interviews directed and produced by Wonder.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,900;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { cursor: auto; }
+    .vpage { padding: 9rem 0 6rem; }
+    .vpage__back { display: inline-block; margin-bottom: 2rem; color: var(--violet); text-decoration: none; }
+    .vpage__back:hover { text-decoration: underline; }
+    .vpage__intro { max-width: 52ch; color: var(--text-dim); font-size: 1.1rem; margin: 1rem 0 3rem; }
+    .vgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+    .vitem { margin: 0; }
+    .vitem__frame { position: relative; aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); display: grid; place-items: center;
+      background: radial-gradient(70% 90% at 30% 20%, hsl(300 85% 55% / .55), transparent 60%), radial-gradient(60% 80% at 80% 90%, hsl(330 80% 40% / .5), transparent 60%), var(--ink-3); }
+    .vitem__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .vitem__frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #000; }
+    .vitem__soon { font: italic 300 1.6rem/1 var(--display); color: rgba(255,255,255,.85); }
+    .vitem figcaption { margin-top: .9rem; }
+    .vitem strong { display: block; font: 600 1.15rem/1.3 var(--body); color: var(--text); }
+    .vitem span { font-size: .9rem; color: var(--text-dim); }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a href="index.html" class="nav__logo" aria-label="Wonder, home"><img src="assets/logo.png" alt="Wonder"></a>
+  </header>
+
+  <main class="vpage">
+    <div class="container">
+      <a href="index.html#work" class="vpage__back">&larr; back to the work</a>
+      <p class="eyebrow">the category</p>
+      <h1 class="display">INTERVIEWS <span class="muted">worth sitting through.</span></h1>
+      <p class="vpage__intro">Conversations directed to feel like conversations &mdash; real people, honest answers, edited for the story.</p>
+      <ul class="vgrid" id="videos"></ul>
+    </div>
+  </main>
+
+  <script>
+    // Add interview videos here: a YouTube video id (youtube) or a file in assets/ (src), plus title and note.
+    // Entries without either show as "coming soon".
+    const VIDEOS = [
+      { youtube: 'rDh9KdlpwPs', title: 'I spent a day with Farmercist, he’s a chill guy', note: 'Wonder Cruise · YouTube' },
+      { src: '', title: 'Interview two', note: 'Coming soon' },
+      { src: '', title: 'Interview three', note: 'Coming soon' },
+    ];
+
+    document.getElementById('videos').innerHTML = VIDEOS.map((v) => `
+      <li><figure class="vitem">
+        <div class="vitem__frame">${v.youtube
+          ? `<iframe src="https://www.youtube-nocookie.com/embed/${v.youtube}" title="${v.title}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>`
+          : v.src
+          ? `<video src="${v.src}" controls playsinline preload="metadata"></video>`
+          : '<span class="vitem__soon">coming soon</span>'}</div>
+        <figcaption><strong>${v.title}</strong><span>${v.note}</span></figcaption>
+      </figure></li>`).join('');
+  </script>
+</body>
+</html>
