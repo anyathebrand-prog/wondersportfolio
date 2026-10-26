@@ -183,6 +183,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   background: linear-gradient(135deg, var(--violet), var(--purple)); font: 800 1rem/1 var(--body);
   border: 2px solid rgba(255,255,255,.7);
 }
+.id-pill__avatar { overflow: hidden; }
+.id-pill__avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 40%; }
 .id-pill strong { display: block; font: 700 1rem/1.2 var(--body); letter-spacing: -.01em; }
 .id-pill__status { display: flex; align-items: center; gap: .4rem; font-size: .78rem; font-weight: 600; color: rgba(255,255,255,.9); }
 .id-pill .badge__dot { width: 7px; height: 7px; }
