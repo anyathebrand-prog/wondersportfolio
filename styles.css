@@ -318,6 +318,7 @@ section.scene { padding: clamp(6rem, 13vw, 10rem) 0; position: relative; }
 .clients__list .logo { display: grid; place-items: center; padding: 1.5rem; }
 .clients__list .logo img { max-height: 72px; max-width: 80%; width: auto; object-fit: contain; filter: grayscale(1) brightness(1.4); opacity: .75; transition: filter .4s, opacity .4s; }
 .clients__list .logo img.logo--round { height: 72px; width: 72px; border-radius: 50%; object-fit: cover; }
+.clients__list .logo img.logo--dark { filter: brightness(0) invert(1); }
 .clients__list .logo:hover img { filter: none; opacity: 1; }
 @media (max-width: 700px) { .clients__list { grid-template-columns: repeat(2, 1fr); } }
 
