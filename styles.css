@@ -273,6 +273,7 @@ section.scene { padding: clamp(6rem, 13vw, 10rem) 0; position: relative; }
 }
 .case__placeholder span { font: italic 300 clamp(2rem, 5vw, 4.5rem)/1 var(--display); color: rgba(255,255,255,.9); letter-spacing: -.03em; text-align: center; padding: 0 1rem; }
 .card__media:hover .case__placeholder { transform: scale(1.05); }
+.card__media video[src] { z-index: 1; }
 .card__meta { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin: 1.25rem 0 .75rem; font-size: .85rem; color: var(--text-dim); }
 .card__title { font: 600 clamp(1.5rem, 2.6vw, 2.1rem)/1.1 var(--display); margin: 0 0 .5rem; letter-spacing: -.01em; }
 .card__teaser { color: var(--text-dim); margin: 0 0 1rem; }
